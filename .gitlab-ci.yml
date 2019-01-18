@@ -1,6 +1,12 @@
+stages:
+  - build
+  - test
 build:
+  tags:
+    - test-env
+  stage: build
   script:
-    - gradle assembleRelease
+    - ./gradlew assembleDebug
   artifacts:
     paths:
     - app/build/outputs/
